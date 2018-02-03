@@ -4,14 +4,13 @@ Alphabet
  %{A%}:а %{A%}:е
  %{AA%}:ӑ %{AA%}:ӗ %{AA%}:0
  %{м%}:м %{м%}:0
-! %>%{A%}н
 ;
 
 Sets 
 
 BackVow = ӑ а ы о у я ё ю ;
 
-FrontVow = ӗ э и ӳ ; 
+FrontVow = ӗ э и е ӳ ;
 
 Cns = б в г д ж з к л м н п р с ҫ т ф х ц ч ш щ й ь ъ ;
 
@@ -24,8 +23,18 @@ Rules
 
 "Back vowel harmony for archiphoneme {AA}"
 %{AA%}:ӑ <=> BackVow: [ ArchiCns: | Cns: | %>: ]+ _ ;
+        except
+                                     %{м%}: %>:  _ н ;
+                                     [ BackVow: | FrontVow: ] %>:  _ н ;
 
+"Non surface {AA} in plural genitive"
+%{AA%}:0 <=> %{м%}: %>: _ н ;
 
+"Non surface {AA} after vowels in genitive"
+%{AA%}:0 <=> [ BackVow: | FrontVow: ] %>: _ н;
+
+"Non surface {м} before н in genitive"
+%{м%}:0 <=> е:е _ %>: %{AA%}:0 н ;
 
 "Remove morpheme boundary"
 %>:0 <=> _ ;
