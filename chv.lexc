@@ -10,7 +10,6 @@ Multichar_Symbols
 %{AA%}               ! Архифонема [ӑ] или [ӗ]
 %{м%}                ! Архифонема м или 0
 %{Y%}                ! Архифонема у или ӳ
-%{Т%}                ! Архифонема т или ч
 
 LEXICON Root
 
@@ -22,17 +21,27 @@ LEXICON CASES
 %<dat%>:%>%{A%} # ;
 %<ins%>:%>п%{A%} # ;
 %<abl%>:%>р%{A%}н # ;
+%<abl%>:%>т%{A%}н # ;
 %<loc%>:%>р%{A%} # ;
-%<loc%>:%>т%{A%} # ;
+%<loc%>:%>т{A%} # ;
 %<ter%>:%>ш%{AA%}н # ;
 %<gen%>:%>%{AA%}н # ;
 
+LEXICON CASES-PL 
+
+%<nom%>: # ;
+%<dat%>:%>%{A%} # ;
+%<ins%>:%>п%{A%} # ;
+%<abl%>:%>чен # ;
+%<loc%>:%>че # ;
+%<ter%>:%>ш%{AA%}н # ;
+%<gen%>:%>%{AA%}н # ;
 
 
 LEXICON PLURAL
 
                  CASES ;
-%<pl%>:%>се%{м%} CASES ;
+%<pl%>:%>се%{м%} CASES-PL ;
 
 LEXICON PERSON
 
