@@ -4,6 +4,8 @@ Alphabet
  %{A%}:а %{A%}:е
  %{AA%}:ӑ %{AA%}:ӗ %{AA%}:0
  %{м%}:м %{м%}:0
+ %{Y%}:у %{Y%}:ӳ
+ а:0
 ;
 
 Sets 
@@ -21,17 +23,23 @@ Rules
 "Back vowel harmony for archiphoneme {A}"
 %{A%}:а <=> BackVow: [ Cns: | %>: ]+ _ ;
 
+"Back vowel harmony for archiphoneme {Y}"
+%{Y%}:у <=> BackVow: [ Cns: | %>: ]+ _ ;
+
 "Back vowel harmony for archiphoneme {AA}"
 %{AA%}:ӑ <=> BackVow: [ ArchiCns: | Cns: | %>: ]+ _ ;
         except
                                      %{м%}: %>:  _ н ;
-                                     [ BackVow: | FrontVow: ] %>:  _ н ;
+                                     [ BackVow: | FrontVow: ] %>:  _ ;
 
 "Non surface {AA} in plural genitive"
 %{AA%}:0 <=> %{м%}: %>: _ н ;
 
 "Non surface {AA} after vowels in genitive"
-%{AA%}:0 <=> [ BackVow: | FrontVow: ] %>: _ н;
+%{AA%}:0 <=> [ BackVow: | FrontVow: | %{Y%}: ] %>: _ ;
+
+"Non surface а vowels before {Y}? "
+а:0 <=> _ %>: %{Y%}: ;
 
 "Non surface {м} before н in genitive"
 %{м%}:0 <=> е:е _ %>: %{AA%}:0 н ;

@@ -9,6 +9,7 @@ Multichar_Symbols
 %{A%}                ! Архифонема [а] или [е]
 %{AA%}               ! Архифонема [ӑ] или [ӗ]
 %{м%}                ! Архифонема м или 0
+%{Y%}                ! Архифонема у или ӳ
 
 LEXICON Root
 
@@ -33,8 +34,8 @@ LEXICON PERSON
 
                PLURAL ;
 %<px1sg%>:%>ӑм PLURAL ;
-%<px1pl%>:%>ӑмӑр PLURAL ;
-%<px2sg%>:%>у PLURAL ;
+%<px1pl%>:%>%{AA%}мӑр PLURAL ;
+%<px2sg%>:%>%{Y%} PLURAL ;
 %<px2pl%>:%>%{AA%}р PLURAL ;
 %<px3sp%>:%>ӗ PLURAL ;
 
@@ -44,7 +45,7 @@ LEXICON N
 
 LEXICON Nouns
 
-канаш:канаш N ; !  ???
+канаш:канаш N ; !  совет
 урам:урам N ;     ! "улица"
 пакча:пакча N ;   ! "сад"
 хула:хула N ;     ! "город"
