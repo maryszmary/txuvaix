@@ -37,8 +37,8 @@ LEXICON PLURAL
 LEXICON PERSON
 
                PLURAL ;
-%<px1sg%>:%>ӑм PLURAL ;
-%<px1pl%>:%>%{AA%}мӑр PLURAL ;
+%<px1sg%>:%>%{AA%}м PLURAL ;
+%<px1pl%>:%>%{AA%}м%{AA%}р PLURAL ;
 %<px2sg%>:%>%{Y%} PLURAL ;
 %<px2pl%>:%>%{AA%}р PLURAL ;
 %<px3sp%>:%>ӗ PLURAL ;
