@@ -6,7 +6,8 @@ Multichar_Symbols
 %<dat%>              ! Датив 
 
 %>                   ! Граница морфемы
-{A%}                 ! архифонема
+%{A%}                ! Архифонема [а] или [е]
+%{AA%}                ! Архифонема [ӑ] или [ӗ]
 
 LEXICON Root
 
@@ -15,20 +16,30 @@ Nouns ;
 LEXICON CASES 
 
 %<nom%>: # ;
-%<dat%>:а # ;
+%<dat%>:%>%{A%} # ;
 %<ins%>:%>п%{A%} # ;
+%<abl%>:%>ран # ;
+%<loc%>:%>ра # ;
+%<ter%>:%>ш%{AA%}н # ;
 
 LEXICON PLURAL
 
              CASES ;
 %<pl%>:%>сем CASES ;
 
+LEXICON PERSON
+
+               PLURAL ;
+%<px1sg%>:%>ӑм PLURAL ;
+%<px2sg%>:%>у PLURAL ;
+
 LEXICON N 
 
-%<n%>: PLURAL ;
+%<n%>: PERSON ;
 
 LEXICON Nouns
 
+канаш:канаш N ; !  ???
 урам:урам N ;     ! "улица"
 пакча:пакча N ;   ! "сад"
 хула:хула N ;     ! "город"
