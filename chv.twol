@@ -5,6 +5,7 @@ Alphabet
  %{AA%}:ӑ %{AA%}:ӗ %{AA%}:0
  %{м%}:м %{м%}:0
  %{Y%}:у %{Y%}:ӳ
+! %{Т%}:т %{Т%}:ч
  а:0
 ;
 
@@ -21,10 +22,13 @@ ArchiCns = %{м%} ;
 Rules
 
 "Back vowel harmony for archiphoneme {A}"
-%{A%}:а <=> BackVow: [ Cns: | %>: ]+ _ ;
+%{A%}:а <=> [BackVow: | %{AA%}:ӑ | %{Y%}:у ] [ Cns: | %>: ]+ _ ;
 
 "Back vowel harmony for archiphoneme {Y}"
 %{Y%}:у <=> BackVow: [ Cns: | %>: ]+ _ ;
+
+!"Back vowel harmony for archiphoneme {Т}"
+!%{Т%}:т <=> BackVow: [ Cns: | %>: ]+ _ ;
 
 "Back vowel harmony for archiphoneme {AA}"
 %{AA%}:ӑ <=> BackVow: [ ArchiCns: | Cns: | %>: ]+ _ ;
