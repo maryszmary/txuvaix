@@ -25,13 +25,10 @@ Rules
 %{A%}:а <=> [BackVow: | %{AA%}:ӑ | %{Y%}:у ] [ Cns: | %>: ]+ _ ;
 
 "Back vowel harmony for archiphoneme {Y}"
-%{Y%}:у <=> BackVow: [ Cns: | %>: ]+ _ ;
-
-!"Back vowel harmony for archiphoneme {Т}"
-!%{Т%}:т <=> BackVow: [ Cns: | %>: ]+ _ ;
+%{Y%}:у <=> [BackVow: | %{A%}:а | %{Y%}:у ] [ Cns: | %>: ]+ _ ;
 
 "Back vowel harmony for archiphoneme {AA}"
-%{AA%}:ӑ <=> BackVow: [ ArchiCns: | Cns: | %>: ]+ _ ;
+%{AA%}:ӑ <=> [BackVow: | %{AA%}:ӑ | %{A%}:а ] [ ArchiCns: | Cns: | %>: ]+ _ ;
         except
                                      %{м%}: %>:  _ н ;
                                      [ BackVow: | FrontVow: ] %>:  _ ;
