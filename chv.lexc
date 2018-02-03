@@ -7,7 +7,8 @@ Multichar_Symbols
 
 %>                   ! Граница морфемы
 %{A%}                ! Архифонема [а] или [е]
-%{AA%}                ! Архифонема [ӑ] или [ӗ]
+%{AA%}               ! Архифонема [ӑ] или [ӗ]
+%{м%}                ! что-то такое
 
 LEXICON Root
 
@@ -18,20 +19,24 @@ LEXICON CASES
 %<nom%>: # ;
 %<dat%>:%>%{A%} # ;
 %<ins%>:%>п%{A%} # ;
-%<abl%>:%>ран # ;
+%<abl%>:%>р%{A%}н # ;
 %<loc%>:%>ра # ;
 %<ter%>:%>ш%{AA%}н # ;
+%<gen%>:%>%{AA%}н # ;
 
 LEXICON PLURAL
 
-             CASES ;
-%<pl%>:%>сем CASES ;
+                 CASES ;
+%<pl%>:%>се%{м%} CASES ;
 
 LEXICON PERSON
 
                PLURAL ;
 %<px1sg%>:%>ӑм PLURAL ;
+%<px1pl%>:%>ӑмӑр PLURAL ;
 %<px2sg%>:%>у PLURAL ;
+%<px2pl%>:%>%{AA%}р PLURAL ;
+%<px3sp%>:%>ӗ PLURAL ;
 
 LEXICON N 
 
